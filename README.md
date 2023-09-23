@@ -79,21 +79,27 @@ print(len(x_test))
 ## OUTPUT:
 
 Printing first five rows of the dataset:
+
 ![Screenshot 2023-09-23 164855](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/4cf5e079-cb89-4de4-9df0-e52dae58495f)
 
 Separating x and y values:
+
 ![b](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/2c675d50-6d84-4aad-9afb-12b81eb9be05)
 
 Checking NULL value for the dataset:
+
 ![Screenshot 2023-09-23 165102](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/0300a1de-e886-4073-a820-f152ffac6a17)
 
 Column y and its description:
+
 ![Screenshot 2023-09-23 165306](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/4193b3d2-8213-47a7-a23b-8fe24d2b4b0f)
 
 Training Set:
+
 ![Screenshot 2023-09-23 165421](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/3ef6bb5d-c329-4d82-b66d-903051b17418)
 
 Testing Set and its length:
+
 ![Screenshot 2023-09-23 165524](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/bf3b9c41-8385-46d7-ac9a-095208f02c21)
 
 
