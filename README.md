@@ -24,18 +24,82 @@ Another aspect is that the data set should be formatted in such a way that more 
 
 
 ## ALGORITHM:
-Importing the libraries
-Importing the dataset
-Taking care of missing data
-Encoding categorical data
-Normalizing the data
-Splitting the data into test and train
+```
+1.Importing the libraries
 
+2.Importing the dataset
+
+3.Taking care of missing data
+
+4.Encoding categorical data
+
+5.Normalizing the data
+
+6.Splitting the data into test and train
+```
 ## PROGRAM:
-/Write your code here/
+```
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
+df = pd.read_csv('Churn_Modelling.csv')
+df.head()
+le=LabelEncoder()
+df["CustomerId"]=le.fit_transform(df["CustomerId"])
+df["Surname"]=le.fit_transform(df["Surname"])
+df["CreditScore"]=le.fit_transform(df["CreditScore"])
+df["Geography"]=le.fit_transform(df["Geography"])
+df["Gender"]=le.fit_transform(df["Gender"])
+df["Balance"]=le.fit_transform(df["Balance"])
+df["EstimatedSalary"]=le.fit_transform(df["EstimatedSalary"])
+X=df.iloc[:,:-1].values
+print(X)
+Y=df.iloc[:,-1].values
+print(Y)
+print(df.isnull().sum())
+df.fillna(df.mean().round(1),inplace=True)
+print(df.isnull().sum())
+y=df.iloc[:,-1].values
+print(y)
+df.duplicated()
+print(df['Exited'].describe())
+scaler= MinMaxScaler()
+df1=pd.DataFrame(scaler.fit_transform(df))
+print(df1)
+x_train,x_test,y_train,x_test=train_test_split(X,Y,test_size=0.2)
+print(x_train)
+print(len(x_train))
+print(x_test)
+print(len(x_test))
+```
 
 ## OUTPUT:
-/ Show the result/
+
+Printing first five rows of the dataset:
+![Screenshot 2023-09-23 164855](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/4cf5e079-cb89-4de4-9df0-e52dae58495f)
+
+Separating x and y values:
+![b](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/2c675d50-6d84-4aad-9afb-12b81eb9be05)
+
+Checking NULL value for the dataset:
+![Screenshot 2023-09-23 165102](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/0300a1de-e886-4073-a820-f152ffac6a17)
+
+Column y and its description:
+![Screenshot 2023-09-23 165306](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/4193b3d2-8213-47a7-a23b-8fe24d2b4b0f)
+
+Training Set:
+![Screenshot 2023-09-23 165421](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/3ef6bb5d-c329-4d82-b66d-903051b17418)
+
+Testing Set and its length:
+![Screenshot 2023-09-23 165524](https://github.com/Sharmilasha/Ex.No.1---Data-Preprocessing/assets/94506182/bf3b9c41-8385-46d7-ac9a-095208f02c21)
+
+
+
 
 ## RESULT
-/Type your result here/
+Hence the data preprocessing is done using the above code and data has been splitted into trainning and testing data for getting a better model.
+
+
